@@ -1,0 +1,8 @@
+[
+    {
+        "name": "WinAwake",
+        "description": "A simple Windows utility to keep the system awake.",
+        "url": "https://github.com/Leviatan1121/winawake",
+        "file": "WinAwake.ps1"
+    }
+]
