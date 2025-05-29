@@ -17,15 +17,23 @@ async function main() {
         link.innerText = "View Project";
         link.href = project.url;
 
-        const download = document.createElement("a");
-        download.innerText = "Download";
-        download.href = `https://cdn.levihub.dev/${project.file}`;
+
+        const downloads = document.createElement("div");
+        downloads.classList.add("downloads");
+
+        Object.entries(project.files).forEach(([type, filename]) => {
+            const download = document.createElement("a");
+            download.innerText = type;
+            download.href = `https://cdn.levihub.dev/${filename}`;
+            downloads.appendChild(download);
+        });
+
 
         ctn.appendChild(name);
         ctn.appendChild(desc);
         //ctn.appendChild(img);
         ctn.appendChild(link);
-        ctn.appendChild(download);
+        ctn.appendChild(downloads);
         list.appendChild(ctn);
     });
 }
